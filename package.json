@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "node_modules/.bin/mocha src/test/e2e/selenium",
+    "test": "node_modules/.bin/mocha --timeout 15000 src/test/e2e/selenium",
     "eject": "react-scripts eject",
     "lint": "./node_modules/.bin/eslint src/* --fix"
   },
