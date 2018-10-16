@@ -57,5 +57,8 @@ describe('Array challenge', () => {
 
   it('Gives index sum array left equal to sum array right', () =>  Promise.each(table, answers))
 
+  it('Fills in my name', () => driver.findElements(seleniumDriver.By.tagName('input')).then((inputFields) => {
+    inputFields[3].sendKeys('Gadiza Zerari')}))
 
+  it('Submits test', () => driver.findElement(seleniumDriver.By.xpath('//*[@id="challenge"]/div/div/div[2]/div/div[2]/button')).click());
 });

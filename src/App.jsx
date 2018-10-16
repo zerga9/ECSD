@@ -23,7 +23,7 @@ export default class App extends Component {
   componentDidUpdate() {
     if (this.state.showChallenge === true) {
       const elem = document.getElementById('challenge');
-      elem.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'smooth' });
+      elem.scrollIntoView({ block: 'start', inline: 'nearest', behavior: 'instant' });
     }
   }
 
@@ -41,4 +41,3 @@ export default class App extends Component {
     );
   }
 }
-
