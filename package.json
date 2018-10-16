@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "babel-preset-stage-1": "^6.24.1",
+    "bluebird": "^3.5.2",
     "chromedriver": "^2.42.1",
     "material-ui": "^0.20.0",
     "mocha": "^5.2.0",
