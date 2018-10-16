@@ -17,6 +17,28 @@ const tableRows = function (row, i) {
     })));
 };
 
+const findIndex = (array) => {
+    let rightSum = array.reduce((acc, val) => acc + val, 0), leftSum = 0;
+
+    for (let i = 0; i < array.length; i++) {
+        rightSum -= array[i];
+        // return first found
+        if (rightSum === leftSum) return i;
+
+        leftSum += array[i];
+    }
+
+    return null;
+}
+
+const answers = function (row, i) {
+  const answer = findIndex(row);
+  console.log(`row ${i + 1}: ${answer}`);
+  return driver.findElements(seleniumDriver.By.tagName('input')).then((inputFields) => {
+    inputFields[i].sendKeys(answer);
+  });
+};
+
 describe('Array challenge', () => {
   before(() => driver.get('http://localhost:3000'));
 
@@ -31,6 +53,9 @@ describe('Array challenge', () => {
   it('Reads the table elements', () => driver.findElements(seleniumDriver.By.tagName('tr'))
       .then(rows => Promise.each(rows, tableRows)))
 
-
   it('Prints the table', () => console.log(table));
+
+  it('Gives index sum array left equal to sum array right', () =>  Promise.each(table, answers))
+
+
 });
